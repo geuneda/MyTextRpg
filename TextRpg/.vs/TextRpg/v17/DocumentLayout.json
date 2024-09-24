@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\baseball\\MyTextRpg\\TextRpg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61353804-7B7C-4C0B-8AC5-3FBE4E99A8DF}|TextRpg\\TextRpg.csproj|c:\\baseball\\mytextrpg\\textrpg\\textrpg\\textrpg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{61353804-7B7C-4C0B-8AC5-3FBE4E99A8DF}|TextRpg\\TextRpg.csproj|solutionrelative:textrpg\\textrpg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{61353804-7B7C-4C0B-8AC5-3FBE4E99A8DF}|TextRpg\\TextRpg.csproj|c:\\baseball\\mytextrpg\\textrpg\\textrpg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61353804-7B7C-4C0B-8AC5-3FBE4E99A8DF}|TextRpg\\TextRpg.csproj|solutionrelative:textrpg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61353804-7B7C-4C0B-8AC5-3FBE4E99A8DF}|TextRpg\\TextRpg.csproj|c:\\baseball\\mytextrpg\\textrpg\\textrpg\\textrpg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{61353804-7B7C-4C0B-8AC5-3FBE4E99A8DF}|TextRpg\\TextRpg.csproj|solutionrelative:textrpg\\textrpg.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TextRpg",
-              "DocumentMoniker": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\TextRpg.csproj",
-              "RelativeDocumentMoniker": "TextRpg\\TextRpg.csproj",
-              "ToolTip": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\TextRpg.csproj",
-              "RelativeToolTip": "TextRpg\\TextRpg.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-24T08:32:16.15Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -44,12 +31,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "TextRpg.csproj",
+              "DocumentMoniker": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\TextRpg.csproj",
+              "RelativeDocumentMoniker": "TextRpg\\TextRpg.csproj",
+              "ToolTip": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\TextRpg.csproj",
+              "RelativeToolTip": "TextRpg\\TextRpg.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-24T08:32:16.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\Program.cs",
               "RelativeDocumentMoniker": "TextRpg\\Program.cs",
               "ToolTip": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\Program.cs",
               "RelativeToolTip": "TextRpg\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAiwJMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T08:30:15.663Z",
               "EditorCaption": ""

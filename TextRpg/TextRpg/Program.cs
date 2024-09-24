@@ -5,9 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using System.Threading;
-using System.Xml;
 
 
 namespace TextRpg
@@ -132,12 +129,12 @@ namespace TextRpg
             {
                 Console.Clear();
                 Console.WriteLine("MyTextRpg에 오신것을 환영합니다.");
-                Console.WriteLine("제대로 즐기기 위해 F11을 눌러 전체화면으로 플레이 해주시길 바랍니다.");
+                Console.WriteLine("MyTextRpg를 제대로 즐기기 위해 F11을 눌러 전체화면으로 플레이 해주시길 바랍니다.");
                 Console.WriteLine("");
                 Console.WriteLine("1. 상태 보기");
                 Console.WriteLine("2. 인벤토리");
                 Console.WriteLine("3. 상점");
-                Console.WriteLine("4. 던전 입장");
+                Console.WriteLine("4. 던전 입장 (던전 입장시 꼭 F11을 눌러 전체화면으로 입장해주세요.) ");
                 Console.WriteLine("5. 휴식하기");
                 Console.WriteLine("6. 진행상황 저장하기");
                 Console.WriteLine("7. 진행상황 불러오기");
@@ -330,8 +327,7 @@ namespace TextRpg
                     }// 반복문이 돌아가는동안 D키를 10번이상 눌렀다면
                     if (attackCounter >= 10)
                     {
-                        Console.WriteLine("성공! A 키를 10번 눌렀습니다.");
-                        Console.WriteLine("공격 성공!"); ;
+                        
                         attackCounter = 0;
                         bossHp -= (int)baseStr;
                         PlayAttackAnimation();//공격
@@ -371,13 +367,12 @@ namespace TextRpg
                     }
                     else
                     {
-                        Console.WriteLine("실패! D 키를 10번 누르지 못했습니다.");
+                        
                     }
 
                     // 방어모드라면
                     if (defenseMode == true)
                     {// 방어성공 출력 후
-                        Console.WriteLine("방어 성공 !");
                         defenseMode = false;// 방어모드 꺼주고
                         PlayDefenseAnimation();//방어 보여주기
                     }//실패라면
@@ -397,7 +392,7 @@ namespace TextRpg
 
 
         public void DisplayBattleField()
-        {
+        {// 대치
             Console.Clear();
             Console.WriteLine("                                                                            ,-            ");
             Console.WriteLine("                                                         @!                           @@@#.         ");
@@ -444,7 +439,7 @@ namespace TextRpg
 
         }
 
-        public void PlayAttackAnimation()
+        public void PlayAttackAnimation()// 공격
         {
             Console.Clear();
             Console.WriteLine("                                                                                      .=#!-.        ");
@@ -491,8 +486,8 @@ namespace TextRpg
             Console.WriteLine("                @@@@$,    =@@@=.                                   ,;=@@@@@@@@@@@@@@@@*.            ");
             Console.WriteLine("                #@@:       #@@@=                                         :##########=                ");
             Console.WriteLine("                 ,,         =@@=                                                                 ");
-
-            //공격
+            Console.WriteLine("성공! A 키를 10번 눌렀습니다.");
+            Console.WriteLine("공격 성공!"); ;
             Thread.Sleep(2000);
         }
 
@@ -548,12 +543,12 @@ namespace TextRpg
             Console.WriteLine("                         .~-    .#@@@@@@@@@@@@@@@@@@@@@@@@#******@@@:                                ");
             Console.WriteLine("                                .#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                ");
             Console.WriteLine("                                 ,!!!!!!!!!#@@@@@@@@@@@@@@@@@@@@@@@@@.                               ");
-
+            Console.WriteLine("방어 성공 !");
             // 방어
             Thread.Sleep(2000);
         }
 
-        public void PlayHitAnimation()
+        public void PlayHitAnimation()//보스공격
         {
             Console.Clear();
             Console.WriteLine("                                                                                     -@@@#-         ");
@@ -601,7 +596,7 @@ namespace TextRpg
             Console.WriteLine("              #@@$;     ,#@@@!                                                                      ");
             Console.WriteLine("               @@        ,@@@@                                                                      ");
             Console.WriteLine("                          ,#@!                                                                      ");
-
+            Console.WriteLine("실패! D 키를 10번 누르지 못했습니다.");
 
             //보스가 공격
             Thread.Sleep(2000);
