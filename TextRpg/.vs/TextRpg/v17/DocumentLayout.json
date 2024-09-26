@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +30,19 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\Program.cs",
+              "RelativeDocumentMoniker": "TextRpg\\Program.cs",
+              "ToolTip": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\Program.cs",
+              "RelativeToolTip": "TextRpg\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOEAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T08:30:15.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "TextRpg.csproj",
               "DocumentMoniker": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\TextRpg.csproj",
@@ -38,21 +51,7 @@
               "RelativeToolTip": "TextRpg\\TextRpg.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-24T08:32:16.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\Program.cs",
-              "RelativeDocumentMoniker": "TextRpg\\Program.cs",
-              "ToolTip": "C:\\baseball\\MyTextRpg\\TextRpg\\TextRpg\\Program.cs",
-              "RelativeToolTip": "TextRpg\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAiwJMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T08:30:15.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T08:32:16.15Z"
             }
           ]
         }

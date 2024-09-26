@@ -4,83 +4,10 @@ using System.Timers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Security;
-using Newtonsoft.Json;
 
 
 namespace TextRpg
 {
-    public class Item
-    {
-        //아이템쪽 변수선언
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public string Description { get; set; }
-        public int Type { get; set; } // 0: 방어구, 1: 무기
-        public float Stat { get; set; }
-        public bool IsEquipped { get; set; } // 장착 여부
-
-        public Item(string name, int price, string description, int type, float stat)
-        {
-            Name = name;
-            Price = price;
-            Description = description;
-            Type = type;
-            Stat = stat;
-            IsEquipped = false; // 기본값은 장착되지 않음
-        }
-    }
-    public class GameData
-    {
-        public int level { get; set; }
-        public int exp { get; set; }
-        public int liveHp { get; set; }
-        public int gold { get; set; }
-        public Item[] Inventory { get; set; } = new Item[0];
-        //리스트를 배열로 저장하는부분 따라하긴했지만 이해하지못함 (공부필요)
-    }
-
-    public class SaveLoadSystem
-    {
-        //게임 데이터가 저장될 파일 경로를 지정
-        private static string filePath = "gameData.json";
-
-        //데이터 저장용 메서드
-        //저장을 위해선 ? GameData를 해당 메서드에 전달해줘야 그 내용을 저장할 수 있음
-        public static void SaveGame(GameData data)
-        {
-            // 데이터를 JSON형식으로 직렬화 하는 코드
-            //Formatting.Indented 이부분은 들여쓰기를 적용하는 "옵션"
-            string json = JsonConvert.SerializeObject(data, Formatting.Indented);
-            //위에서 직렬화 한 JSON데이터를 파일로 저장
-            File.WriteAllText(filePath, json);
-            // 출력 및 슬립을 줘서 사용자가 저장중인것을 인지시킴
-            Console.WriteLine("진행상황을 저장중입니다...");
-            Thread.Sleep(3000);
-        }
-
-        //데이터 불러오기용 메서드
-        public static GameData LoadGame()
-        {
-            //데이터 파일이 있는지 확인하고
-            if (File.Exists(filePath))
-            {
-                //JSON데이터를 문자열로 변환
-                string json = File.ReadAllText(filePath);
-                //JSON형식의 문자열을 GameData객체로 변환해주는 코드 (압축과 압축풀기로 이해하면 매우 쉬움)
-                GameData data = JsonConvert.DeserializeObject<GameData>(json);
-                Console.WriteLine("진행상황을 불러오는 중입니다...");
-                Thread.Sleep(3000);
-                //불러온 변환한 데이터를 반환해서 게임내에 반영
-                return data;
-            }
-            else
-            {
-                Console.WriteLine("불러올 파일이 없습니다.");
-                Thread.Sleep(3000);
-                return null;
-            }
-        }
-    }
     public class Program
     {
         private static int dKeyPressCount = 0;
@@ -287,10 +214,9 @@ namespace TextRpg
         {
 
             Console.Clear();
-            Console.WriteLine("보스와 전투 시작!");
 
             int attackCounter = 0; // 10번채우면 공격
-
+            bool firstSceneCounter = false;
             while (bossHp > 0 && hp > 0)
             {
                 Console.Clear();
@@ -301,13 +227,17 @@ namespace TextRpg
                 Console.WriteLine("");
                 Console.WriteLine("                공격 : A            방어 : D          ");
                 Console.WriteLine("");
-                Console.WriteLine("                      지금은 서로 대치중입니다 !");
-                Console.WriteLine("");
-                Console.WriteLine("대치상황에서는 S를 눌러 다음턴으로 넘어갈 수 있습니다 S를 계속 눌러주세요 !!");
-
+                if (firstSceneCounter == false)
+                {
+                    Console.WriteLine("                      지금은 서로 대치중입니다 !");
+                    Console.WriteLine("");
+                    Console.WriteLine("대치상황에서는 S를 눌러 다음턴으로 넘어갈 수 있습니다 S 눌러주세요 !!");
+                    firstSceneCounter = true;
+                }
+                int turn = random.Next(0, 100);
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-
-                if (random.Next(1, 10) == 9)
+                //플레이어턴                
+                if (turn >= 50)
                 {
                     Console.WriteLine("당신이 공격할 수 있는 기회입니다 ! 공격하려면 A를 3초안에 10번 누르세요 !!!");
                     timer = new System.Timers.Timer(3000);
@@ -337,8 +267,8 @@ namespace TextRpg
                         Console.WriteLine("실패! A 키를 10번 누르지 못했습니다.");
                     }
                 }
-                // 몬스터 공격 (랜덤)
-                if (random.Next(1, 13) == 12)
+                //보스턴
+                else
                 {
                     defenseMode = false; //방어태세가 되어있을수 있으니 false로 바꿔줌
                     Console.WriteLine("보스가 공격을 준비합니다! 방어하려면 D를 3초안에 10번 누르세요 !!!");
